@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>غادة عمر - مطورة ومتعلمة لغات</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      direction: rtl;
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      background: #f0f4f8;
+    }
+    header, footer {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>غادة عمر</h1>
+  <p>مطورة وتدرس لغات برمجة وثقافات متعددة</p>
+</header>
+
+<nav>
+  <a href="#home">الرئيسية</a>
+  <a href="#about">من أنا</a>
+  <a href="#work">أعمالي</a>
+  <a href="#math">معادلات</a>
+  <a href="#contact">تواصل معي</a>
+</nav>
+
+<section id="home">
+  <div class="card">
+    <h2>مرحباً بكم في موقعي الشخصي</h2>
+    <p>
+      أنا غادة عمر، درست البرمجة وأعشق تعلم اللغات والثقافات المختلفة. 
+      أشارك هنا أعمالي وأفكاري، بالإضافة إلى أدوات مفيدة مثل حساب المعادلات الهندسية. 
+      أتمنى أن يكون الموقع مفيدًا لكم!
+    </p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="card">
+    <h2>تعريف شخصي</h2>
+    <p>
+      اسمي غادة عمر، خريجة تخصص برمجة. أعمل على تطوير مهاراتي في تصميم وبرمجة المواقع والتطبيقات، 
+      كما أنني شغوفة بتعلم لغات مثل الإنجليزية، الفرنسية، والإسبانية.
+    </p>
+  </div>
+</section>
+
+<section id="work">
+  <div class="card">
+    <h2>بعض من أعمالي</h2>
+    <ul>
+      <li>تصميم مواقع باستخدام HTML, CSS, JavaScript</li>
+      <li>مشاريع برمجية تعليمية</li>
+      <li>ترجمة مقالات تقنية من الإنجليزية للعربية</li>
+      <li>تطوير أدوات تفاعلية لحساب المعادلات</li>
+    </ul>
+  </div>
+</section>
+
+<section id="math">
+  <div class="card">
+    <h2>حاسبة المعادلات</h2>
+
+    <h3>حساب نصف الدائرة</h3>
+    <input type="number" id="radius1" placeholder="ادخل نصف القطر">
+    <button onclick="calcHalfCircle()">احسب المساحة</button>
+    <p id="result1"></p>
+
+    <h3>حساب قطر الدائرة</h3>
+    <input type="number" id="radius2" placeholder="ادخل نصف القطر">
+    <button onclick="calcDiameter()">احسب القطر</button>
+    <p id="result2"></p>
+
+    <h3>حساب حجم الأسطوانة</h3>
+    <input type="number" id="radius3" placeholder="نصف القطر">
+    <input type="number" id="height3" placeholder="الارتفاع">
+    <button onclick="calcCylinder()">احسب الحجم</button>
+    <p id="result3"></p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>تواصل معي</h2>
+    <p>راسلني عبر البريد الإلكتروني: <strong>ghada.omar@example.com</strong></p>
+    <p>أو عبر صفحات التواصل الاجتماعي.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 غادة عمر. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+  function calcHalfCircle() {
+    let r = parseFloat(document.getElementById("radius1").value);
+    let area = (Math.PI * r * r) / 2;
+    document.getElementById("result1").innerText = "مساحة نصف الدائرة = " + area.toFixed(2);
+  }
+
+  function calcDiameter() {
+    let r = parseFloat(document.getElementById("radius2").value);
+    let d = 2 * r;
+    document.getElementById("result2").innerText = "قطر الدائرة = " + d.toFixed(2);
+  }
+
+  function calcCylinder() {
+    let r = parseFloat(document.getElementById("radius3").value);
+    let h = parseFloat(document.getElementById("height3").value);
+    let volume = Math.PI * r * r * h;
+    document.getElementById("result3").innerText = "حجم الأسطوانة = " + volume.toFixed(2);
+  }
+</script>
+
+</body>
+</html>
